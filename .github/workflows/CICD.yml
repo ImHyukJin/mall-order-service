@@ -11,7 +11,7 @@ jobs:
     steps:
       - name: Trigger MALL-INFRA Workflow
         run: |
-          curl -X POST -H "Accept: application/vnd.github.v3+json" \
-               -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
-               --data '{"event_type": "trigger-cicd", "client_payload": { "service": "${{ github.repository }}" }}' \
-               https://api.github.com/repos/YOUR_GITHUB_USERNAME/MALL-INFRA/dispatches
+         curl -X POST -H "Accept: application/vnd.github.v3+json" \
+         -H "Authorization: token ${{ secrets.PERSONAL_ACCESS_TOKEN }}" \
+         https://api.github.com/repos/your-org/mall-infra/dispatches \
+         -d '{"event_type": "trigger-cicd", "client_payload": { "service": "mall_order" }}'
