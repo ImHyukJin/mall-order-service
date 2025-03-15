@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      
 jobs:
   trigger-infra:
     runs-on: ubuntu-latest
