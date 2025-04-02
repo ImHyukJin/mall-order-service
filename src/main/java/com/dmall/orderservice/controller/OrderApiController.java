@@ -12,12 +12,18 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.dmall.orderservice.repository.OrderRepository;
 
+
 @RestController
 @RequestMapping("/api/order")
 public class OrderApiController {
 
 	@Autowired
-	private OrderRepository orderRepository;
+	private OrderRepository orderRepository ;
+	
+	@GetMapping("/")
+	public String check() {
+		return "notihng";
+	}
 	
 	@Value("${server.env}")
 	private String env;
@@ -27,7 +33,7 @@ public class OrderApiController {
 	private String serverAddress;
 	@Value("${serverName}")
 	private String serverName;
-	
+	    
 	//서버가 잘 돌아가나
 	@GetMapping("/hc")
 	public ResponseEntity<?> healthCheck() {
@@ -38,10 +44,9 @@ public class OrderApiController {
 		responseData.put("serverName", serverName);
 		return ResponseEntity.ok(responseData);
 	}
-	  
+	
 	@GetMapping("/env")
 	public ResponseEntity<?> getEnv() {
 		return ResponseEntity.ok(env);
 	}
-	
 }
