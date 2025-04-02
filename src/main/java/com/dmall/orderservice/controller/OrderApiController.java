@@ -20,7 +20,7 @@ public class OrderApiController {
 	@Autowired
 	private OrderRepository orderRepository ;
 	
-	@GetMapping("/")
+	@GetMapping
 	public String check() {
 		return "notihng";
 	}
