@@ -38,7 +38,7 @@ public class OrderApiController {
 		responseData.put("serverName", serverName);
 		return ResponseEntity.ok(responseData);
 	}
-	
+	  
 	@GetMapping("/env")
 	public ResponseEntity<?> getEnv() {
 		return ResponseEntity.ok(env);
