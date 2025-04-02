@@ -14,7 +14,7 @@ import com.dmall.orderservice.repository.OrderRepository;
 
 
 @RestController
-@RequestMapping("/api/order")
+@RequestMapping("/order")
 public class OrderApiController {
 
 	@Autowired
