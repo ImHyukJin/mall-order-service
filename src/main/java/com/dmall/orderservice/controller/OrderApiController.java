@@ -20,4 +20,13 @@ public class OrderApiController {
 	@Autowired
 	private OrderRepository orderRepository ;
 	
+	//healthcheck
+	@Value("${server.env}")
+	private String env;
+	
+	@GetMapping("/env")
+	public ResponseEntity<?> getEnv() {
+		return ResponseEntity.ok(env);
+	}
+	//////////////////////////////////////////////
 }
